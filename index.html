@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메모 앱</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>📝 메모 앱</h1>
+      <form id="memo-form" class="memo-form">
+        <label for="memo-input" class="sr-only">메모 내용</label>
+        <input id="memo-input" type="text" placeholder="메모를 입력하세요" maxlength="120" required />
+        <button type="submit">추가</button>
+      </form>
+
+      <section class="toolbar">
+        <p id="memo-count">총 0개</p>
+        <button id="clear-completed" type="button">완료 삭제</button>
+      </section>
+
+      <ul id="memo-list" class="memo-list" aria-live="polite"></ul>
+    </main>
+
+    <template id="memo-item-template">
+      <li class="memo-item">
+        <label class="memo-content-wrap">
+          <input class="toggle" type="checkbox" />
+          <span class="memo-content"></span>
+        </label>
+        <button class="delete" type="button" aria-label="메모 삭제">삭제</button>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
